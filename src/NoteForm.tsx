@@ -76,7 +76,7 @@ export function NoteForm({ note, onSubmit, onAddTag, availableTags }: NoteFormPr
             <Button type="submit" variant="primary">
               Save
             </Button>
-            <Button type="button" variant="outline-primary">
+            <Button onClick={() => navigate("..")} type="button" variant="outline-primary">
               Cancel
             </Button>
           </Stack>

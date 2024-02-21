@@ -1,30 +1,30 @@
 # React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Install
+1. npm install
+2. npm run dev
 
-Currently, two official plugins are available:
+## Components
+  App -> NoteList
+       -> NoteNew -> NoteForm
+       -> NoteLayout -> Note -> NoteEdit -> NoteForm
+- `NoteList`: list all notes with tags attached
+- `NoteNew`: control to input the create form for note
+- `NoteForm`: Form to create/update note
+- `NoteLayout`: control Note view, if note exists return Note component, otherwise go back to - NoteList
+- `Note`: show content and tags of note
+- `NoteEdit`: control to input edit form for note
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Functionalities
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+- In `NoteList`: search notes by title and tags, if title includes the searching return list of notes under the cards of notes.
+    - `Create` button: opem `NoteForm` to create a note
+    - `Edit Tags` button: open a modal to update or delete available tags, if tag is included in any notes, update/delete those notes
+- In `NoteForm`: input title, tag and content to create/update note
+    - `Tags` input: input the tags in hint or create a new one if it is not exist
+    - `Save` button: save note
+    - `Cancel` button: cancel and redirect to previous step
+- In `Note`: choose note in NoteList to show `Note` details
+    - `Edit` button: open `NoteForm` to update the exist note
+    - `Delete` button: delete that note from `NoteList`
+    - `Back` button: back to previous url/step
