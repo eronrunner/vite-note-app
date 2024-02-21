@@ -6,7 +6,9 @@
 
 ## Components
   App -> NoteList
+       
        -> NoteNew -> NoteForm
+      
        -> NoteLayout -> Note -> NoteEdit -> NoteForm
 - `NoteList`: list all notes with tags attached
 - `NoteNew`: control to input the create form for note
